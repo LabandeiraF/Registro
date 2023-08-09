@@ -7,10 +7,15 @@ function showAlertError() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const checkbox = document.getElementById("terminos");
-    const registerButton = document.getElementById("regBtn");
-  
-    checkbox.addEventListener("change", function () {
-      registerButton.disabled = !checkbox.checked;
-    });
+  const checkbox = document.getElementById("terminos");
+  const regBtn = document.getElementById("regBtn");
+
+  // Deshabilita el botón de registro cuandocarga la página
+  regBtn.disabled = true;
+
+  // Habilita o deshabilita el botón de registro dependiendo del estado del checkbox
+  checkbox.addEventListener("change", function () {
+    regBtn.disabled = !checkbox.checked;
   });
+});
+
